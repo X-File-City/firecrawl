@@ -53,7 +53,7 @@
     {
       "id": "scraping-engines",
       "title": "Scraping Engines",
-      "description": "The heart of Firecrawl: multiple scraping strategies live under scraper/scrapeURL/engines. Fire Engine is the proprietary engine, Playwright handles JavaScript-heavy pages, Fetch does simple HTTP requests, and specialized engines handle PDFs and documents. The scraper orchestrator in scrapeURL/index.ts selects the best engine per request.",
+      "description": "The heart of Firecrawl: multiple scraping strategies live under scraper scrapeURL engines. Fire Engine is the proprietary engine, Playwright handles JavaScript-heavy pages, Fetch does simple HTTP requests, and specialized engines handle PDFs and documents. The scraper orchestrator in scrapeURL index.ts selects the best engine per request.",
       "focusDirectory": "apps/api/src/scraper",
       "colorMode": "fileTypes",
       "highlightLayers": [
@@ -102,7 +102,7 @@
     {
       "id": "services-and-workers",
       "title": "Services & Workers",
-      "description": "Services handle the business logic and async job processing. Scrape/crawl requests are queued via BullMQ (Redis-backed) and processed by dedicated workers. The worker directory contains the scrape worker, crawl logic, and concurrency controls. Supporting services handle webhooks, billing, notifications, and monitoring.",
+      "description": "Services handle the business logic and async job processing. Scrape and crawl requests are queued via BullMQ (Redis-backed) and processed by dedicated workers. The worker directory contains the scrape worker, crawl logic, and concurrency controls. Supporting services handle webhooks, billing, notifications, and monitoring.",
       "focusDirectory": "apps/api/src/services",
       "colorMode": "fileTypes",
       "highlightLayers": [
@@ -143,7 +143,7 @@
     {
       "id": "extraction-and-libs",
       "title": "Extraction Pipeline & Libraries",
-      "description": "The lib directory contains shared utilities and the AI-powered extraction pipeline. The extract/ subdirectory builds LLM prompts, processes responses, and re-ranks results. Other key utilities handle HTML-to-Markdown conversion, URL validation, crawl state management in Redis, deep research, and LLM.txt generation.",
+      "description": "The lib directory contains shared utilities and the AI-powered extraction pipeline. The extract subdirectory builds LLM prompts, processes responses, and re-ranks results. Other key utilities handle HTML-to-Markdown conversion, URL validation, crawl state management in Redis, deep research, and LLM.txt generation.",
       "focusDirectory": "apps/api/src/lib",
       "colorMode": "fileTypes",
       "highlightLayers": [
@@ -172,7 +172,7 @@
     {
       "id": "sdks",
       "title": "Client SDKs",
-      "description": "Firecrawl ships SDKs in JavaScript/TypeScript, Python, and Rust (plus a Java SDK). Each SDK mirrors the API surface with versioned clients (v1, v2), typed method wrappers for scrape/crawl/extract/search/batch, and utilities for pagination and job watching. The JS and Python SDKs also include async support.",
+      "description": "Firecrawl ships SDKs in JavaScript and TypeScript, Python, and Rust, plus a Java SDK. Each SDK mirrors the API surface with versioned clients, typed method wrappers for scrape, crawl, extract, search, and batch, and utilities for pagination and job watching. The JS and Python SDKs also include async support.",
       "focusDirectory": "apps",
       "colorMode": "fileTypes",
       "highlightLayers": [
@@ -211,7 +211,7 @@
     {
       "id": "supporting-services",
       "title": "Supporting Microservices",
-      "description": "Two standalone microservices support the main API. The Playwright service (TypeScript/Express) provides browser-based rendering for JavaScript-heavy pages with ad-blocking and user-agent rotation. The Go HTML-to-Markdown service efficiently converts scraped HTML into clean Markdown at scale.",
+      "description": "Two standalone microservices support the main API. The Playwright service, built with TypeScript and Express, provides browser-based rendering for JavaScript-heavy pages with ad-blocking and user-agent rotation. The Go HTML-to-Markdown service efficiently converts scraped HTML into clean Markdown at scale.",
       "focusDirectory": "apps",
       "colorMode": "fileTypes",
       "highlightLayers": [
@@ -240,7 +240,7 @@
     {
       "id": "testing",
       "title": "Testing Strategy",
-      "description": "Firecrawl uses 'snips' — end-to-end tests organized by API version under __tests__/snips/. Each endpoint has its own test file covering happy and failure paths. Tests run via 'pnpm harness jest' which spins up the API server and workers. The separate test-suite app holds integration and load tests.",
+      "description": "Firecrawl uses snips — end-to-end tests organized by API version under the tests snips directory. Each endpoint has its own test file covering happy and failure paths. Tests run via pnpm harness jest which spins up the API server and workers. The separate test-suite app holds integration and load tests.",
       "focusDirectory": "apps/api/src/__tests__",
       "colorMode": "fileTypes",
       "highlightLayers": [
@@ -259,7 +259,7 @@
     {
       "id": "infrastructure",
       "title": "Infrastructure & Deployment",
-      "description": "The docker-compose.yaml orchestrates the full stack: API, Playwright service, Redis, RabbitMQ, and PostgreSQL (NUQ). Each app has its own Dockerfile. Configuration flows through environment variables defined in .env files, with Zod schema validation in src/config.ts. The SELF_HOST.md guide covers self-hosting setup.",
+      "description": "The docker-compose.yaml orchestrates the full stack: API, Playwright service, Redis, RabbitMQ, and PostgreSQL. Each app has its own Dockerfile. Configuration flows through environment variables defined in .env files, with Zod schema validation in src config.ts. The SELF_HOST.md guide covers self-hosting setup.",
       "focusDirectory": "",
       "colorMode": "fileTypes",
       "highlightLayers": [
