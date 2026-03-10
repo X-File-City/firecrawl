@@ -14,7 +14,7 @@
     {
       "id": "api-entry-and-routing",
       "title": "API Server — Entry Point & Routing",
-      "description": "The API lives in apps/api and is an Express server. Requests enter through src/index.ts, get routed through versioned route files (v0, v1, v2), and land in corresponding controllers. The API supports three versions simultaneously, with v2 being the current primary.",
+      "description": "The API lives in apps api and is an Express server. Requests enter through src index.ts, get routed through versioned route files, and land in corresponding controllers. The API supports three versions simultaneously, with v2 being the current primary.",
       "focusDirectory": "apps/api/src",
       "colorMode": "fileTypes",
       "highlightLayers": [
